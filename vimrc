@@ -7,23 +7,23 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/syntastic'
-Plugin 'nikvdp/ejs-syntax'
-Plugin 'leafgarland/typescript-vim'
-Plugin 'pangloss/vim-javascript'
-Plugin 'w0rp/ale'
+" Plugin 'nikvdp/ejs-syntax'
+" Plugin 'leafgarland/typescript-vim'
+" Plugin 'pangloss/vim-javascript'
+" Plugin 'w0rp/ale'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-" set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-" set statusline+=%*
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
 
 let g:syntastic_javascript_checkers=['eslint']
 let g:syntastic_always_populate_loc_list = 0
 let g:syntastic_loc_list_height = 5
 let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 
 let g:syntastic_error_symbol = '❌'
