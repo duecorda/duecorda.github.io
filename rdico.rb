@@ -38,6 +38,6 @@ if should_restart
 
   `kill -SIGHUP #{pid}`
   sleep(1)
-  `/home/ubuntu/.rbenv/shims/rake live_dicobot[#{shard_id},#{max}] >/opt/www/l2mh/services/drb.log 2>&1 &`
+  `cd /opt/www/l2mh;/home/ubuntu/.rbenv/shims/rake live_dicobot[#{shard_id},#{max}] >/opt/www/l2mh/services/drb.log 2>&1 &`
   puts "## Done"
 end
