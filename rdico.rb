@@ -23,7 +23,7 @@ end
 
 pids = `ps x | grep 'rake.*_dicobot' | grep -v grep | awk '{ print $1 }'`
 pid = pids.split(/[\r\n]/)
-if pid.length > 0
+if pid.length >= 2
   puts "## Multiple Process"
   pid.each {|x| `kill -9 #{x}`}
   return restart 
