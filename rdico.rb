@@ -14,7 +14,7 @@ def restart(pid=nil)
   `cp #{APP_ROOT}/services/drb.log #{APP_ROOT}/services/drb.bak`
   `cp #{APP_ROOT}/services/dico.log #{APP_ROOT}/services/dico.bak`
   if !pid.nil?
-    `kill -1 #{pid}`
+    pid.each {|x| `kill -1 #{x}`}
     sleep(1)
   end
   `cd #{APP_ROOT};#{WHICH_RAKE} #{RAKE_FILE}[#{SHARD_ID},#{MAX_SHARD}] >#{APP_ROOT}/services/drb.log 2>&1 &`
