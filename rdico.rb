@@ -2,13 +2,14 @@
 
 SHARD_ID = ARGV[0]
 MAX_SHARD = ARGV[1]
+RAKE_FILE = ARGV[2]
 if SHARD_ID.nil? || MAX_SHARD.nil? || SHARD_ID.empty? || MAX_SHARD.empty?
   return puts "## No shard_id and max_shard"
 end
 
 APP_ROOT = ENV['RAILS_ENV'] == "production" ? "/opt/www/l2mh" : "/home/duecorda/Projects/l2mh"
 WHICH_RAKE = ENV['RAILS_ENV'] == "production" ? "/home/ubuntu/.rbenv/shims/rake" : "/home/duecorda/.rbenv/shims/rake"
-RAKE_FILE = ENV['RAILS_ENV'] == "production" ? ENV['RAKEDICO'] : "dev_dicobot"
+# RAKE_FILE = ENV['RAILS_ENV'] == "production" ? ENV['RAKEDICO'] : "dev_dicobot"
 
 def restart(pid=nil)
   `cp #{APP_ROOT}/services/drb.log #{APP_ROOT}/services/drb.bak`
