@@ -8,7 +8,7 @@ end
 
 APP_ROOT = ENV['RAILS_ENV'] == "production" ? "/opt/www/l2mh" : "/home/duecorda/Projects/l2mh"
 WHICH_RAKE = ENV['RAILS_ENV'] == "production" ? "/home/ubuntu/.rbenv/shims/rake" : "/home/duecorda/.rbenv/shims/rake"
-RAKE_FILE = ENV['RAILS_ENV'] == "production" ? "live_dicobot" : "dev_dicobot"
+RAKE_FILE = ENV['RAILS_ENV'] == "production" ? ENV['RAKEDICO'] : "dev_dicobot"
 
 def restart(pid=nil)
   `cp #{APP_ROOT}/services/drb.log #{APP_ROOT}/services/drb.bak`
