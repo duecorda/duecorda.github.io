@@ -9,5 +9,5 @@ tail -n $N2 /opt/www/l2mh/services/drb.log
 
 echo ""
 # ps aux | grep "dicobot" | grep -v "grep"
-PID=`ps aux | grep 'rake.live_dicobot' | grep -v grep | tr -s ' ' | cut -d ' ' -f 2`
+PID=`ps aux | grep '_dicobot' | grep -v grep | tr -s ' ' | cut -d ' ' -f 2`
 ps -p $PID -o state,pid,vsz=MEMORY -o etime,atime -o args=ARGS
