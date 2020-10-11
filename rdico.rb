@@ -40,7 +40,7 @@ lines = dat.split(/[\r\n]/)
 lines.reverse.each do |line|
   if /^\[INFO.*Discord.using.gateway.protocol.version:.[0-9],.requested:.[0-9]$/.match(line)
     return puts "## Normal"
-  elsif /^\[ERROR/.match(line)
+  elsif /^\[Broken\.pipe/.match(line)
     puts line
     return restart(pid)
   end
